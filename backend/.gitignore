@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node.js dependencies and build artifacts
+node_modules/
+dist/
+
+# Environment files
+.env
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
