@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainLayout from '../components/layout/MainLayout';
 import SummaryCards from '../components/dashboard/SummaryCards';
 import { getExpenses } from '../api/expenseService';
 import { getIncomes } from '../api/incomeService';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     totalIncome: 0,
     totalExpenses: 0,
@@ -152,7 +154,7 @@ const Dashboard = () => {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6" style={{ perspective: '1000px' }}>
                 <button 
-                  onClick={() => window.location.href = '/expenses'}
+                  onClick={() => navigate('/expenses')}
                   className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-sm transition-all duration-300 ease-out border-2 border-gray-100 group hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]"
                   style={{
                     transform: `translate3d(${mousePos.x * 0.3}px, ${mousePos.y * 0.3}px, 0) rotateX(${mousePos.y * 0.08}deg) rotateY(${mousePos.x * 0.08}deg)`,
@@ -166,7 +168,7 @@ const Dashboard = () => {
                 </button>
                 
                 <button 
-                  onClick={() => window.location.href = '/income'}
+                  onClick={() => navigate('/income')}
                   className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-sm transition-all duration-300 ease-out border-2 border-gray-100 group hover:-translate-y-2 hover:border-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]"
                   style={{
                     transform: `translate3d(${mousePos.x * 0.25}px, ${mousePos.y * 0.25}px, 0) rotateX(${mousePos.y * 0.06}deg) rotateY(${mousePos.x * 0.06}deg)`,
@@ -180,7 +182,7 @@ const Dashboard = () => {
                 </button>
                 
                 <button 
-                  onClick={() => window.location.href = '/reports'}
+                  onClick={() => navigate('/reports')}
                   className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-sm transition-all duration-300 ease-out border-2 border-gray-100 group hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]"
                   style={{
                     transform: `translate3d(${mousePos.x * 0.35}px, ${mousePos.y * 0.35}px, 0) rotateX(${mousePos.y * 0.07}deg) rotateY(${mousePos.x * 0.07}deg)`,
@@ -194,7 +196,7 @@ const Dashboard = () => {
                 </button>
                 
                 <button 
-                  onClick={() => window.location.href = '/budget'}
+                  onClick={() => navigate('/budget')}
                   className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-sm transition-all duration-300 ease-out border-2 border-gray-100 group hover:-translate-y-2 hover:border-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]"
                   style={{
                     transform: `translate3d(${mousePos.x * 0.28}px, ${mousePos.y * 0.28}px, 0) rotateX(${mousePos.y * 0.09}deg) rotateY(${mousePos.x * 0.09}deg)`,
@@ -258,13 +260,13 @@ const Dashboard = () => {
                   )}
                   <div className="flex space-x-2 mt-4">
                     <button 
-                      onClick={() => window.location.href = '/expenses'}
+                      onClick={() => navigate('/expenses')}
                       className="flex-1 bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors"
                     >
                       View More
                     </button>
                     <button 
-                      onClick={() => window.location.href = '/expenses'}
+                      onClick={() => navigate('/expenses')}
                       className="bg-gray-200 text-gray-700 text-sm font-medium py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
                     >
                       Add New
@@ -318,13 +320,13 @@ const Dashboard = () => {
                   )}
                   <div className="flex space-x-2 mt-4">
                     <button 
-                      onClick={() => window.location.href = '/income'}
+                      onClick={() => navigate('/income')}
                       className="flex-1 bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors"
                     >
                       View More
                     </button>
                     <button 
-                      onClick={() => window.location.href = '/income'}
+                      onClick={() => navigate('/income')}
                       className="bg-gray-200 text-gray-700 text-sm font-medium py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
                     >
                       Add New
